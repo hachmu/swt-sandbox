@@ -1,0 +1,12 @@
+before_script:
+  - cd blatt4
+
+Kompilieren mit Gradle:
+  # image: TODO: noch eintragen
+  script:
+    - gradle compileJava
+
+Testen mit Gradle:
+  # image: TODO: noch eintragen
+  script:
+    - gradle test

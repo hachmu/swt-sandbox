@@ -1,0 +1,18 @@
+# (c) https://github.com/MontiCore/monticore
+variables:
+  GRADLE_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2"
+
+cache:
+  paths:
+    - .m2/
+    - "**/.gradle/"
+    - "**/build/"
+  key: global
+
+# Teil von Blatt 4 ist es einen eigenen Job zu definieren
+Blatt 4:
+  trigger:
+    include: blatt4/.gitlab-ci.yml
+  rules:
+    - changes:
+        - blatt4/**/*

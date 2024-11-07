@@ -1,0 +1,33 @@
+/* (c) https://github.com/MontiCore/monticore */
+plugins {
+  // Das Java-Plugin liefert Kompilations-Tasks
+  id "java"
+}
+
+// Wir konfigurieren den Compiler
+sourceSets.main.java.srcDirs = ["code"]
+sourceSets.test.java.srcDirs = ["test"]
+
+// Wir benutzen JUnit
+dependencies {
+  testImplementation(platform('org.junit:junit-bom:5.10.0'))
+  testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+// JUnit (und alle weiteren Dependencies) werden von hier bezogen
+repositories {
+  maven {
+    url = "https://nexus.se.rwth-aachen.de/content/groups/public"
+  }
+}
+
+// Wir konfigurieren den Test-Task
+test {
+  // Verwende JUnit
+  useJUnitPlatform()
+
+  // Produziere eine Ausgabe für die folgenden Events
+  testLogging {
+    events "PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR"
+  }
+}
