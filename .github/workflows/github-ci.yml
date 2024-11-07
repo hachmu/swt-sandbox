@@ -1,0 +1,13 @@
+env:
+  GRADLE_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2"
+
+# Teil von Blatt 4 ist es einen eigenen Job zu definieren
+name: root workflow
+on:
+  push:
+    paths:
+      - './blatt4/**/*'
+jobs:
+  call_blatt4_workflow:
+    name: Blatt 4
+    uses: ./.github/workflows/blatt4-github-ci.yml
