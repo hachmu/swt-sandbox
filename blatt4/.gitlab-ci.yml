@@ -2,11 +2,11 @@ before_script:
   - cd blatt4
 
 Kompilieren mit Gradle:
-  # image: TODO: noch eintragen
+  image: registry.git.rwth-aachen.de/monticore/container-registry/gradle:7.4.2-jdk11
   script:
     - gradle compileJava
 
 Testen mit Gradle:
-  # image: TODO: noch eintragen
+  image: registry.git.rwth-aachen.de/monticore/container-registry/gradle:7.4.2-jdk11
   script:
     - gradle test
