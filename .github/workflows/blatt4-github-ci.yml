@@ -4,10 +4,10 @@ jobs:
   compile_java:
     name: Kompilieren mit Gradle
     runs-on: ubuntu-latest
-    working-directory: ./blatt4
     steps:
     # - run: cd blatt4 && gradle compileJava
       - run: ls
+        working-directory: ./blatt4
   test_java:
     name: Testen mit Gradle
     needs: compile_java
