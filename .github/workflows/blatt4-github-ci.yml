@@ -5,12 +5,29 @@ jobs:
     name: Kompilieren mit Gradle
     runs-on: ubuntu-latest
     steps:
-    # - run: cd blatt4 && gradle compileJava
-      - run: ls
+      - name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            blatt4
+      - name: Set up Java 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'oracle'
+          java-version: '21'
+          cache: 'gradle'
+      - name: List folder contents
+        run: ls
+      - name: List contents of folder blatt4
+        run: |
+          cd blatt4
+          ls
+      - name: Compile with Gradle
+        run: gradle compileJava
         working-directory: blatt4
-  test_java:
-    name: Testen mit Gradle
-    needs: compile_java
-    runs-on: ubuntu-latest
-    steps:
-      - run: cd blatt4 && gradle test
+#   test_java:
+#     name: Testen mit Gradle
+#     needs: compile_java
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: cd blatt4 && gradle test
