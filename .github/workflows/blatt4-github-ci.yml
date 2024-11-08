@@ -7,7 +7,7 @@ jobs:
     working-directory: ./blatt4
     steps:
     # - run: cd blatt4 && gradle compileJava
-      run: ls
+      - run: ls
   test_java:
     name: Testen mit Gradle
     needs: compile_java
