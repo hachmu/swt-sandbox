@@ -10,8 +10,6 @@ jobs:
         with:
           sparse-checkout: |
             blatt4
-      - name: List folder contents
-        run: ls
       - name: Run compileJava
         run: gradle compileJava
         working-directory: blatt4
