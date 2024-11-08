@@ -10,8 +10,7 @@ jobs:
         with:
           sparse-checkout: |
             blatt4
-      - name: Run compileJava
-        run: gradle compileJava
+      - run: gradle compileJava
         working-directory: blatt4
   test_java:
     name: Testen mit Gradle
@@ -23,6 +22,5 @@ jobs:
         with:
           sparse-checkout: |
             blatt4
-      - name: Run test
-        run: gradle test
+      - run: gradle test
         working-directory: blatt4
