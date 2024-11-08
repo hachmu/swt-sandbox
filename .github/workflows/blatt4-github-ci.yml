@@ -1,5 +1,5 @@
 name: blatt4 workflow
-on: workflow_call
+on: [workflow_dispatch, workflow_call]
 jobs:
   compile_java:
     name: Kompilieren mit Gradle
