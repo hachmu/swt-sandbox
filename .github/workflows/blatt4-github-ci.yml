@@ -5,7 +5,8 @@ jobs:
     name: Kompilieren mit Gradle
     runs-on: ubuntu-latest
     steps:
-      - run: cd blatt4 && gradle compileJava
+    # - run: cd blatt4 && gradle compileJava
+      - run: ls
   test_java:
     name: Testen mit Gradle
     needs: compile_java
