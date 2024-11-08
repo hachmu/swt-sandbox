@@ -1,11 +1,13 @@
 # (c) https://github.com/MontiCore/monticore
 build/
+bin/
 target/
 gen/
 *.log
 
 .gradle/
 .idea/
+.vscode/
 
 # Gradle-Wrapper raus
 **/gradle
