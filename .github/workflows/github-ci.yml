@@ -4,9 +4,12 @@ env:
 # Teil von Blatt 4 ist es einen eigenen Job zu definieren
 name: root workflow
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - '**'
     paths:
-      - './blatt4/**/*'
+      - 'blatt4/**/*'
 jobs:
   call_blatt4_workflow:
     name: Blatt 4
